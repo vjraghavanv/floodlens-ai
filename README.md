@@ -14,15 +14,33 @@ hotspots, flood hazard zones, water bodies, and rainfall observation sites in
 
 ## Status
 
-Built in phases (see [`docs/PHASE1_PLAN.md`](docs/PHASE1_PLAN.md)):
+All seven phases complete (see [`docs/PHASE1_PLAN.md`](docs/PHASE1_PLAN.md)):
 
 - [x] **Phase 1** — Plan, architecture, repository structure, README
-- [ ] **Phase 2** — Verify real datasets; build repeatable ingestion → GeoJSON
-- [ ] **Phase 3** — React app + interactive Chennai map
-- [ ] **Phase 4** — Insights, location details, proximity analysis
-- [ ] **Phase 5** — AWS S3 / Lambda / API Gateway / Location Service integration
-- [ ] **Phase 6** — Tests + defect resolution (unit, API, component, Playwright E2E)
-- [ ] **Phase 7** — Deployment docs + 3-minute demo script
+- [x] **Phase 2** — Verified real dataset (57 OSM water bodies); repeatable ingestion → GeoJSON
+- [x] **Phase 3** — React app + interactive Chennai MapLibre map (layers, clustering, search, legend)
+- [x] **Phase 4** — Insights, location details, proximity analysis (verified end-to-end)
+- [x] **Phase 5** — AWS S3 / Lambda / API Gateway (SAM validated) + Amplify hosting config
+- [x] **Phase 6** — 60 automated tests passing (pipeline, API, unit/component, Playwright E2E)
+- [x] **Phase 7** — Deployment docs + 3-minute demo script
+
+**Tests:** 60/60 passing — 11 pipeline + 7 API + 22 frontend unit/component + 20 Playwright E2E
+(10 journeys × desktop + mobile). See [`docs/TESTING.md`](docs/TESTING.md).
+
+### Acceptance criteria
+
+| # | Criterion | Status |
+|---|-----------|--------|
+| 1 | Runs locally with documented instructions | ✅ `cd web && npm run dev` |
+| 2 | Interactive Chennai map | ✅ MapLibre GL, zoom/pan/clusters |
+| 3 | Real, verified geographical datasets | ✅ 57 OSM water bodies (ODbL) |
+| 4 | Explore flood hotspots & water bodies | ✅ markers, popups, details |
+| 5 | Meaningful analytical insights | ✅ 4 Recharts views + filters |
+| 6 | Working proximity analysis | ✅ Haversine, nearest-k, map lines |
+| 7 | Documented, functional AWS architecture | ✅ SAM validated; Amplify config |
+| 8 | Automated tests | ✅ 60 tests, 4 suites |
+| 9 | Polished, responsive interface | ✅ dark navy theme, mobile-tested |
+| 10 | Ready for public deployment & demo | ✅ Amplify docs + demo script |
 
 ## Architecture
 
