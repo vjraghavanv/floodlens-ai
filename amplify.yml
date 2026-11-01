@@ -1,0 +1,21 @@
+version: 1
+# FloodLens AI — AWS Amplify Hosting build spec.
+# The frontend lives in the web/ subdirectory of the repo.
+applications:
+  - appRoot: web
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm ci
+        build:
+          commands:
+            # VITE_API_BASE is injected from Amplify env vars (empty = demo mode).
+            - npm run build
+      artifacts:
+        baseDirectory: dist
+        files:
+          - "**/*"
+      cache:
+        paths:
+          - node_modules/**/*

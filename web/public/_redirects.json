@@ -1,0 +1,8 @@
+[
+  {
+    "comment": "FloodLens AI — Amplify SPA rewrite. Route all non-asset paths to index.html so client-side tab state works on refresh. Paste this into Amplify Console → App settings → Rewrites and redirects, or it is applied automatically if present at repo root.",
+    "source": "</^[^.]+$|\\.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|woff2|ttf|map|json|geojson)$)([^.]+$)/>",
+    "target": "/index.html",
+    "status": "200"
+  }
+]

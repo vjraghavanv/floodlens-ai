@@ -1,0 +1,107 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  FloodLens AI — serverless data backend. Two S3 buckets (raw + processed),
+  one read-only Lambda serving processed GeoJSON, and an HTTP API with CORS.
+  Cost-conscious: pay-per-use, idles at ~$0.
+
+Parameters:
+  AllowedOrigin:
+    Type: String
+    Default: "*"
+    Description: CORS origin for the API (set to your Amplify domain in production).
+  ProjectName:
+    Type: String
+    Default: floodlens
+
+Globals:
+  Function:
+    Runtime: python3.12
+    Timeout: 15
+    MemorySize: 256
+    Architectures: [arm64]
+
+Resources:
+  # --- Storage -------------------------------------------------------------
+  RawBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "${ProjectName}-raw-${AWS::AccountId}"
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+
+  ProcessedBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "${ProjectName}-processed-${AWS::AccountId}"
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+
+  # --- Compute -------------------------------------------------------------
+  DatasetsApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "${ProjectName}-datasets-api"
+      Handler: handler.handler
+      CodeUri: lambda/datasets_api/
+      Environment:
+        Variables:
+          PROCESSED_BUCKET: !Ref ProcessedBucket
+          PROCESSED_PREFIX: "processed/"
+          ALLOWED_ORIGIN: !Ref AllowedOrigin
+      Policies:
+        # Least privilege: read-only on the processed bucket only.
+        - Statement:
+            - Effect: Allow
+              Action: ["s3:GetObject"]
+              Resource: !Sub "${ProcessedBucket.Arn}/processed/*"
+      Events:
+        FloodHotspots:
+          Type: HttpApi
+          Properties: { Path: /flood-hotspots, Method: GET, ApiId: !Ref HttpApi }
+        WaterBodies:
+          Type: HttpApi
+          Properties: { Path: /water-bodies, Method: GET, ApiId: !Ref HttpApi }
+        RainfallSites:
+          Type: HttpApi
+          Properties: { Path: /rainfall-sites, Method: GET, ApiId: !Ref HttpApi }
+        HazardZones:
+          Type: HttpApi
+          Properties: { Path: /hazard-zones, Method: GET, ApiId: !Ref HttpApi }
+        Datasets:
+          Type: HttpApi
+          Properties: { Path: /datasets, Method: GET, ApiId: !Ref HttpApi }
+
+  # --- API -----------------------------------------------------------------
+  HttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: prod
+      CorsConfiguration:
+        AllowOrigins: [!Ref AllowedOrigin]
+        AllowMethods: [GET, OPTIONS]
+        AllowHeaders: [Content-Type]
+        MaxAge: 300
+
+Outputs:
+  ApiBaseUrl:
+    Description: Base URL for the REST API (set as VITE_API_BASE in the frontend).
+    Value: !Sub "https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com/prod"
+  RawBucketName:
+    Value: !Ref RawBucket
+  ProcessedBucketName:
+    Value: !Ref ProcessedBucket

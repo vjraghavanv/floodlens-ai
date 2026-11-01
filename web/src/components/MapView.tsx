@@ -2,7 +2,8 @@ import { useEffect, useRef } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import type { AllData, LayerId } from "../types";
-import { BASEMAP_STYLE, CHENNAI_CENTER, DEFAULT_ZOOM, LAYERS } from "../lib/layers";
+import { CHENNAI_CENTER, DEFAULT_ZOOM, LAYERS } from "../lib/layers";
+import { resolveBasemapStyle } from "../lib/basemap";
 import { buildFeatureCollections } from "../lib/mapData";
 
 export interface MapViewProps {
@@ -31,7 +32,7 @@ export default function MapView({
     if (!containerRef.current || mapRef.current) return;
     const map = new maplibregl.Map({
       container: containerRef.current,
-      style: BASEMAP_STYLE as maplibregl.StyleSpecification,
+      style: resolveBasemapStyle() as maplibregl.StyleSpecification,
       center: CHENNAI_CENTER,
       zoom: DEFAULT_ZOOM,
       attributionControl: { compact: true },
