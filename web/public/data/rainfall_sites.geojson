@@ -1,0 +1,121 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2417,
+          13.0604
+        ]
+      },
+      "properties": {
+        "name": "Nungambakkam",
+        "station_locality": "Nungambakkam",
+        "source": "Demonstration dataset",
+        "demo": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.18,
+          12.9894
+        ]
+      },
+      "properties": {
+        "name": "Meenambakkam",
+        "station_locality": "Meenambakkam",
+        "source": "Demonstration dataset",
+        "demo": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.32,
+          13.22
+        ]
+      },
+      "properties": {
+        "name": "Ennore",
+        "station_locality": "Ennore",
+        "source": "Demonstration dataset",
+        "demo": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1,
+          12.925
+        ]
+      },
+      "properties": {
+        "name": "Tambaram",
+        "station_locality": "Tambaram",
+        "source": "Demonstration dataset",
+        "demo": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.186,
+          13.19
+        ]
+      },
+      "properties": {
+        "name": "Red Hills",
+        "station_locality": "Red Hills",
+        "source": "Demonstration dataset",
+        "demo": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.0577,
+          13.0106
+        ]
+      },
+      "properties": {
+        "name": "Chembarambakkam",
+        "station_locality": "Chembarambakkam",
+        "source": "Demonstration dataset",
+        "demo": true
+      }
+    }
+  ],
+  "metadata": {
+    "id": "rainfall_sites",
+    "name": "Chennai Rainfall Observation Sites (demonstration)",
+    "source_org": "FloodLens AI (illustrative; station localities after IMD/WRD network)",
+    "description": "Observation-point localities approximating the IMD / TN-WRD rain-gauge network around Chennai. DEMONSTRATION values; not measured rainfall.",
+    "source_url": "https://mausam.imd.gov.in/",
+    "license": "Demonstration data — not for operational use",
+    "coverage": "Chennai, Tamil Nadu, India",
+    "format": "GeoJSON (Point)",
+    "crs_source": "EPSG:4326 (WGS84)",
+    "demo": true,
+    "last_updated": "2026-11-01T11:40:03.480456+00:00",
+    "record_count": 6
+  }
+}

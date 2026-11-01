@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-11-01T11:40:03.480456+00:00",
+  "datasets": [
+    {
+      "id": "flood_hotspots",
+      "name": "Chennai Historical Flood Hotspots (demonstration)",
+      "source_org": "FloodLens AI (illustrative)",
+      "description": "Neighbourhoods widely documented as severely flood-affected during the Nov–Dec 2015 Chennai floods. Locations are real; flood depth and event attributes are ILLUSTRATIVE demonstration values, not measured records.",
+      "source_url": "https://en.wikipedia.org/wiki/2015_South_India_floods",
+      "license": "Demonstration data — not for operational use",
+      "coverage": "Chennai, Tamil Nadu, India",
+      "format": "GeoJSON (Point)",
+      "crs_source": "EPSG:4326 (WGS84)",
+      "demo": true,
+      "last_updated": "2026-11-01T11:40:03.480456+00:00",
+      "record_count": 15
+    },
+    {
+      "id": "water_bodies",
+      "name": "Chennai Water Bodies (lakes, ponds, reservoirs)",
+      "source_org": "OpenStreetMap contributors",
+      "description": "Named water bodies within the Chennai administrative area.",
+      "source_url": "https://overpass-api.de/api/interpreter",
+      "license": "Open Database License (ODbL) 1.0",
+      "coverage": "Chennai, Tamil Nadu, India",
+      "format": "GeoJSON (Point, from OSM way centroids)",
+      "crs_source": "EPSG:4326 (WGS84)",
+      "demo": false,
+      "fetched_at": "2026-11-01T11:40:03.480456+00:00",
+      "last_updated": "2026-11-01T11:40:03.480456+00:00",
+      "record_count": 57
+    },
+    {
+      "id": "hazard_zones",
+      "name": "Chennai Flood Hazard Zones (demonstration)",
+      "source_org": "FloodLens AI (illustrative)",
+      "description": "Illustrative hazard polygons over known low-lying basins (Pallikaranai marsh catchment, Adyar/Cooum floodplain). DEMONSTRATION geometry only.",
+      "source_url": "https://en.wikipedia.org/wiki/2015_South_India_floods",
+      "license": "Demonstration data — not for operational use",
+      "coverage": "Chennai, Tamil Nadu, India",
+      "format": "GeoJSON (Polygon)",
+      "crs_source": "EPSG:4326 (WGS84)",
+      "demo": true,
+      "last_updated": "2026-11-01T11:40:03.480456+00:00",
+      "record_count": 2
+    },
+    {
+      "id": "rainfall_sites",
+      "name": "Chennai Rainfall Observation Sites (demonstration)",
+      "source_org": "FloodLens AI (illustrative; station localities after IMD/WRD network)",
+      "description": "Observation-point localities approximating the IMD / TN-WRD rain-gauge network around Chennai. DEMONSTRATION values; not measured rainfall.",
+      "source_url": "https://mausam.imd.gov.in/",
+      "license": "Demonstration data — not for operational use",
+      "coverage": "Chennai, Tamil Nadu, India",
+      "format": "GeoJSON (Point)",
+      "crs_source": "EPSG:4326 (WGS84)",
+      "demo": true,
+      "last_updated": "2026-11-01T11:40:03.480456+00:00",
+      "record_count": 6
+    }
+  ],
+  "totals": {
+    "flood_hotspots": 15,
+    "water_bodies": 57,
+    "hazard_zones": 2,
+    "rainfall_sites": 6
+  }
+}

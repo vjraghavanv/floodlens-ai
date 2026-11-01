@@ -1,0 +1,97 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.19,
+              12.92
+            ],
+            [
+              80.24,
+              12.92
+            ],
+            [
+              80.24,
+              12.97
+            ],
+            [
+              80.19,
+              12.97
+            ],
+            [
+              80.19,
+              12.92
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Pallikaranai Marsh Catchment",
+        "risk": "high",
+        "source": "Demonstration dataset",
+        "demo": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.23,
+              13.0
+            ],
+            [
+              80.27,
+              13.0
+            ],
+            [
+              80.27,
+              13.03
+            ],
+            [
+              80.23,
+              13.03
+            ],
+            [
+              80.23,
+              13.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Adyar Floodplain",
+        "risk": "high",
+        "source": "Demonstration dataset",
+        "demo": true
+      }
+    }
+  ],
+  "metadata": {
+    "id": "hazard_zones",
+    "name": "Chennai Flood Hazard Zones (demonstration)",
+    "source_org": "FloodLens AI (illustrative)",
+    "description": "Illustrative hazard polygons over known low-lying basins (Pallikaranai marsh catchment, Adyar/Cooum floodplain). DEMONSTRATION geometry only.",
+    "source_url": "https://en.wikipedia.org/wiki/2015_South_India_floods",
+    "license": "Demonstration data — not for operational use",
+    "coverage": "Chennai, Tamil Nadu, India",
+    "format": "GeoJSON (Polygon)",
+    "crs_source": "EPSG:4326 (WGS84)",
+    "demo": true,
+    "last_updated": "2026-11-01T11:40:03.480456+00:00",
+    "record_count": 2
+  }
+}

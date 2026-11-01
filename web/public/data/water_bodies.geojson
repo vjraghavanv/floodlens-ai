@@ -1,0 +1,995 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1499163,
+          13.0311084
+        ]
+      },
+      "properties": {
+        "name": "Porur Lake",
+        "waterbody_type": "lake",
+        "osm_id": "way/23633592",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.217535,
+          13.1033995
+        ]
+      },
+      "properties": {
+        "name": "ICF Lake",
+        "waterbody_type": "reservoir",
+        "osm_id": "way/23804000",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2786618,
+          13.0857922
+        ]
+      },
+      "properties": {
+        "name": "Kandaswami Muthukumaraswami Koil Kulam",
+        "waterbody_type": "pond",
+        "osm_id": "way/23885099",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2686807,
+          13.0334367
+        ]
+      },
+      "properties": {
+        "name": "Kapaleeshwara Koil Kulam",
+        "waterbody_type": "pond",
+        "osm_id": "way/24270420",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2710182,
+          13.0314245
+        ]
+      },
+      "properties": {
+        "name": "Athikesvara Perumal Koil Kulam",
+        "waterbody_type": "pond",
+        "osm_id": "way/24270487",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1423361,
+          13.1063301
+        ]
+      },
+      "properties": {
+        "name": "Ambattur Lake",
+        "waterbody_type": "reservoir",
+        "osm_id": "way/25391800",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1631528,
+          13.1649637
+        ]
+      },
+      "properties": {
+        "name": "Puzhal Lake",
+        "waterbody_type": "reservoir",
+        "osm_id": "way/25394157",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1814033,
+          13.1235262
+        ]
+      },
+      "properties": {
+        "name": "Korattur Lake",
+        "waterbody_type": "lake",
+        "osm_id": "way/25474612",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2106863,
+          13.1407617
+        ]
+      },
+      "properties": {
+        "name": "Retteri Lake",
+        "waterbody_type": "reservoir",
+        "osm_id": "way/25474749",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.211503,
+          12.9882439
+        ]
+      },
+      "properties": {
+        "name": "Velachery Lake",
+        "waterbody_type": "lake",
+        "osm_id": "way/25504265",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1966839,
+          12.9862922
+        ]
+      },
+      "properties": {
+        "name": "Adambakkam Lake",
+        "waterbody_type": "reservoir",
+        "osm_id": "way/25724261",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1878689,
+          12.9844606
+        ]
+      },
+      "properties": {
+        "name": "Pannachiamman Koil Tank",
+        "waterbody_type": "pond",
+        "osm_id": "way/25724278",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1909225,
+          12.9613673
+        ]
+      },
+      "properties": {
+        "name": "Madipakkam Lake",
+        "waterbody_type": "lake",
+        "osm_id": "way/25725027",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2021207,
+          12.9685658
+        ]
+      },
+      "properties": {
+        "name": "Puzhuthivakkam Lake",
+        "waterbody_type": "lake",
+        "osm_id": "way/25726316",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2139929,
+          13.1520729
+        ]
+      },
+      "properties": {
+        "name": "Retteri Lake",
+        "waterbody_type": "reservoir",
+        "osm_id": "way/26800736",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.225076,
+          13.0341066
+        ]
+      },
+      "properties": {
+        "name": "Ellaiamman Koil Kulam",
+        "waterbody_type": "pond",
+        "osm_id": "way/27203001",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2142641,
+          13.0529846
+        ]
+      },
+      "properties": {
+        "name": "Vadapalani Murugan Temple Pond",
+        "waterbody_type": "reservoir",
+        "osm_id": "way/27771449",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2614273,
+          12.9855689
+        ]
+      },
+      "properties": {
+        "name": "Marundeeshwara Temple Tank",
+        "waterbody_type": "pond",
+        "osm_id": "way/29047592",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2419083,
+          13.0600384
+        ]
+      },
+      "properties": {
+        "name": "Agathishwara Perumal Koil Kulam",
+        "waterbody_type": "pond",
+        "osm_id": "way/29241216",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2526376,
+          13.1694948
+        ]
+      },
+      "properties": {
+        "name": "Periyathoppu Lake",
+        "waterbody_type": "reservoir",
+        "osm_id": "way/29246065",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2403937,
+          12.9908274
+        ]
+      },
+      "properties": {
+        "name": "Oxidation Pond",
+        "waterbody_type": "pond",
+        "osm_id": "way/30037018",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2401114,
+          12.9890143
+        ]
+      },
+      "properties": {
+        "name": "Oxidation Pond",
+        "waterbody_type": "pond",
+        "osm_id": "way/30037019",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.220753,
+          12.9857913
+        ]
+      },
+      "properties": {
+        "name": "Velachery Lake",
+        "waterbody_type": "water",
+        "osm_id": "way/30606822",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2359082,
+          12.9790221
+        ]
+      },
+      "properties": {
+        "name": "Kallu Kuttai Lake",
+        "waterbody_type": "lake",
+        "osm_id": "way/30609167",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1643174,
+          13.0519893
+        ]
+      },
+      "properties": {
+        "name": "Alappakkam Madhuravoyal Eri",
+        "waterbody_type": "lake",
+        "osm_id": "way/30625195",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.3048247,
+          13.2076355
+        ]
+      },
+      "properties": {
+        "name": "ETPS Flyash Pond",
+        "waterbody_type": "reservoir",
+        "osm_id": "way/30738635",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2991298,
+          13.2117048
+        ]
+      },
+      "properties": {
+        "name": "ETPS Flyash Pond",
+        "waterbody_type": "reservoir",
+        "osm_id": "way/30738642",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2558023,
+          13.0946675
+        ]
+      },
+      "properties": {
+        "name": "Kandasamy Koil Tank",
+        "waterbody_type": "reservoir",
+        "osm_id": "way/30978033",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2498001,
+          13.1624663
+        ]
+      },
+      "properties": {
+        "name": "Periyathoppu Lake",
+        "waterbody_type": "reservoir",
+        "osm_id": "way/31020934",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2493334,
+          13.0383112
+        ]
+      },
+      "properties": {
+        "name": "Balasubramani Temple Tank",
+        "waterbody_type": "pond",
+        "osm_id": "way/32306856",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.3232862,
+          13.2232486
+        ]
+      },
+      "properties": {
+        "name": "Thamarai Kulam",
+        "waterbody_type": "lake",
+        "osm_id": "way/32995619",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.3171951,
+          13.2145225
+        ]
+      },
+      "properties": {
+        "name": "ETPS Oxidation Pond",
+        "waterbody_type": "pond",
+        "osm_id": "way/33069045",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.3003355,
+          13.1615152
+        ]
+      },
+      "properties": {
+        "name": "Thyagarajaswami Koil Tank",
+        "waterbody_type": "pond",
+        "osm_id": "way/33071135",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2224859,
+          13.0247592
+        ]
+      },
+      "properties": {
+        "name": "Karaneeswarar Temple Tank",
+        "waterbody_type": "reservoir",
+        "osm_id": "way/35475053",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2173036,
+          13.0223868
+        ]
+      },
+      "properties": {
+        "name": "Prasanna Venkatesa Perumal Koil Kulam",
+        "waterbody_type": "pond",
+        "osm_id": "way/35475132",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2873848,
+          13.0933942
+        ]
+      },
+      "properties": {
+        "name": "Kachaleeswara Temple Reservoir",
+        "waterbody_type": "reservoir",
+        "osm_id": "way/47109361",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.290036,
+          13.097879
+        ]
+      },
+      "properties": {
+        "name": "Malligeshwarar Temple Reservoir",
+        "waterbody_type": "reservoir",
+        "osm_id": "way/47109373",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2779169,
+          13.1001576
+        ]
+      },
+      "properties": {
+        "name": "Kondithope Kasi Viswanathar Koil",
+        "waterbody_type": "pond",
+        "osm_id": "way/47415291",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2725411,
+          13.0616759
+        ]
+      },
+      "properties": {
+        "name": "Thiruvateeswaran Koil Kulam",
+        "waterbody_type": "pond",
+        "osm_id": "way/47571166",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2542844,
+          13.0851598
+        ]
+      },
+      "properties": {
+        "name": "Gangadeeshwarar Koil Kulam",
+        "waterbody_type": "pond",
+        "osm_id": "way/48057021",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2001602,
+          12.9129973
+        ]
+      },
+      "properties": {
+        "name": "Nesavalar Nagar Lake",
+        "waterbody_type": "lake",
+        "osm_id": "way/82874933",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1974717,
+          12.9637856
+        ]
+      },
+      "properties": {
+        "name": "Madippakkam Village Pond",
+        "waterbody_type": "pond",
+        "osm_id": "way/84099124",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2129191,
+          13.1282577
+        ]
+      },
+      "properties": {
+        "name": "Kolathur Lake",
+        "waterbody_type": "lake",
+        "osm_id": "way/95668360",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2527498,
+          13.2008861
+        ]
+      },
+      "properties": {
+        "name": "Kadapakkam Tank",
+        "waterbody_type": "lake",
+        "osm_id": "way/98315669",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2210395,
+          12.8868484
+        ]
+      },
+      "properties": {
+        "name": "Classic Farms Lake 2",
+        "waterbody_type": "lake",
+        "osm_id": "way/98358044",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2361236,
+          12.977766
+        ]
+      },
+      "properties": {
+        "name": "Kallu Kuttai Lake",
+        "waterbody_type": "water",
+        "osm_id": "way/98639499",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1409692,
+          13.1160788
+        ]
+      },
+      "properties": {
+        "name": "Ambattur Lake",
+        "waterbody_type": "reservoir",
+        "osm_id": "way/102459233",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1871738,
+          13.0965483
+        ]
+      },
+      "properties": {
+        "name": "Thiruvalleswar Temple Pond",
+        "waterbody_type": "pond",
+        "osm_id": "way/102547877",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2745452,
+          13.0388449
+        ]
+      },
+      "properties": {
+        "name": "Virupatcheshwarer Temple Tank",
+        "waterbody_type": "pond",
+        "osm_id": "way/127464711",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2388363,
+          12.9662437
+        ]
+      },
+      "properties": {
+        "name": "Anna Nedumchalai Lake",
+        "waterbody_type": "lake",
+        "osm_id": "way/131425322",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2569592,
+          12.9683324
+        ]
+      },
+      "properties": {
+        "name": "Thamarai Kulam",
+        "waterbody_type": "pond",
+        "osm_id": "way/131961844",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.21956,
+          13.1124068
+        ]
+      },
+      "properties": {
+        "name": "Mariamman Koil Kulam",
+        "waterbody_type": "pond",
+        "osm_id": "way/138307646",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2045746,
+          12.9347305
+        ]
+      },
+      "properties": {
+        "name": "Pallikaranai Thamarai Kulam",
+        "waterbody_type": "pond",
+        "osm_id": "way/154089347",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2069302,
+          12.9250359
+        ]
+      },
+      "properties": {
+        "name": "Thandukarai Kulam",
+        "waterbody_type": "pond",
+        "osm_id": "way/197488611",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.1981877,
+          12.9286829
+        ]
+      },
+      "properties": {
+        "name": "Pallikkaranai Eri",
+        "waterbody_type": "lake",
+        "osm_id": "way/203215030",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.22881,
+          12.8660578
+        ]
+      },
+      "properties": {
+        "name": "Pigeon Pond",
+        "waterbody_type": "reservoir",
+        "osm_id": "way/211121334",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2715357,
+          13.0376289
+        ]
+      },
+      "properties": {
+        "name": "Madhava Perumal Temple Tank",
+        "waterbody_type": "pond",
+        "osm_id": "way/211423276",
+        "source": "OpenStreetMap (ODbL)",
+        "demo": false
+      }
+    }
+  ],
+  "metadata": {
+    "id": "water_bodies",
+    "name": "Chennai Water Bodies (lakes, ponds, reservoirs)",
+    "source_org": "OpenStreetMap contributors",
+    "description": "Named water bodies within the Chennai administrative area.",
+    "source_url": "https://overpass-api.de/api/interpreter",
+    "license": "Open Database License (ODbL) 1.0",
+    "coverage": "Chennai, Tamil Nadu, India",
+    "format": "GeoJSON (Point, from OSM way centroids)",
+    "crs_source": "EPSG:4326 (WGS84)",
+    "demo": false,
+    "fetched_at": "2026-11-01T11:40:03.480456+00:00",
+    "last_updated": "2026-11-01T11:40:03.480456+00:00",
+    "record_count": 57
+  }
+}
