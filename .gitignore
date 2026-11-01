@@ -1,0 +1,38 @@
+# Node / frontend
+node_modules/
+web/node_modules/
+web/dist/
+web/.vite/
+*.local
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# Python pipeline
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Large / raw data (keep processed + metadata, ignore bulky raw downloads)
+data/raw/*
+!data/raw/.gitkeep
+
+# AWS build artifacts
+infra/lambda/**/package/
+infra/**/*.zip
+.aws-sam/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Playwright
+web/test-results/
+web/playwright-report/
+web/.playwright/
