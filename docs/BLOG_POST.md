@@ -105,6 +105,25 @@ The honest takeaway for other builders: the hard part of a spatial data app isn'
 
 Point all of that at any open geospatial dataset and you have a map people can open, trust, and explore.
 
+## Closing thoughts
+
+I set out to answer a deceptively simple question — *where did Chennai flood, and what water is nearby?* — and the biggest lesson is that the map was never the hard part. MapLibre draws dots in an afternoon. The hard part, and the part that actually makes a spatial app worth opening, was everything around the map: getting real data I had the right to use, being honest about where that data ran out, validating every coordinate, and building a seam so the same experience works whether or not there's a cloud behind it.
+
+The other lesson is about restraint. It would have been easy to let FloodLens *imply* that a nearby lake caused a flood — the map practically begs you to draw that line. Refusing to make that claim, and saying so in the UI, is what separates a tool that informs from one that misleads. A good map earns trust by being clear about what it does *not* know.
+
+What I'm left with is less a Chennai flood app than a reusable *pattern*: validated open data → GeoJSON → a provider-agnostic UI → a serverless, least-privilege AWS backend that idles at near-zero cost. Chennai is just the first city it happens to point at.
+
+## Key takeaways
+
+- **Start from real, licensed data — and label the rest.** The project's credibility rests on 57 verified OpenStreetMap water bodies (ODbL) and on *visibly* flagging the demonstration layers rather than blending them in. Honest data beats impressive-looking data.
+- **Compute, never hardcode.** Every number on the dashboard is derived from the loaded data at runtime, so the map can never quietly drift from its source.
+- **Build a seam, not a dependency.** The `DataProvider` abstraction lets the identical UI run on bundled GeoJSON (zero AWS) or a live AWS REST API. That one decision is what makes the app both demo-able by anyone and production-ready.
+- **Pick tools that keep doors open.** MapLibre renders the same style spec as Amazon Location Service, turning "add a managed basemap" into a one-line config change instead of a rewrite.
+- **Serverless + least privilege is the cheap, safe default.** S3 → Lambda → API Gateway idles at ~$0, and scoping the Lambda role to `s3:GetObject` on one prefix keeps the blast radius tiny.
+- **Say what the map does *not* show.** Proximity is geographic, not causal — stating that plainly is a feature, not a disclaimer.
+- **Reliability is a feature you can see.** 60 tests across unit, API, component, and desktop+mobile E2E are why "explore it" is a promise the map can keep.
+- **The pattern travels.** Swap the bounding box and the demo layers, and this becomes a flood-and-water explorer for any city with open data.
+
 ---
 
 ## How this meets the challenge criteria
