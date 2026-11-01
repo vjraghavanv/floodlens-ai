@@ -1,0 +1,115 @@
+<mxfile host="app.diagrams.net" modified="2026-11-01T13:14:00.000Z" agent="FloodLens AI" version="24.0.0" type="device">
+  <diagram id="floodlens-arch" name="FloodLens AI Architecture">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="FloodLens AI — Architecture (Chennai Flood &amp; Water Intelligence)" style="text;html=1;fontSize=20;fontStyle=1;fontColor=#0d1424;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="900" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Serverless &amp; cost-conscious · runs locally with zero AWS · all figures computed from loaded data" style="text;html=1;fontSize=12;fontColor=#5a6b82;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="40" y="48" width="900" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ================= Data Sources ================= -->
+        <mxCell id="src-group" value="Public Datasets" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef6ff;strokeColor=#3b82f6;fontStyle=1;fontColor=#1e3a5f;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="230" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="src-osm" value="OpenStreetMap (Overpass API)&#10;VERIFIED — 57 Chennai water bodies (ODbL)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d6f5e3;strokeColor=#16a34a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="58" y="130" width="196" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="src-flood" value="Chennai 2015 flood literature&#10;DEMO — hotspots (labelled)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="58" y="184" width="196" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="src-rain" value="IMD / TN-WRD localities&#10;DEMO — rainfall sites (labelled)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="58" y="232" width="196" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="src-hazard" value="Low-lying basins&#10;DEMO — hazard polygons (labelled)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="58" y="280" width="196" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ================= Ingestion ================= -->
+        <mxCell id="ing-group" value="Data Ingestion &amp; Validation (repeatable · pipeline/)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3f0ff;strokeColor=#7c3aed;fontStyle=1;fontColor=#4c1d95;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="120" width="250" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="ing-ingest" value="ingest.py&#10;download · dedup · missing-value handling" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c3aed;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="348" y="150" width="214" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ing-valid" value="validators.py&#10;lat/lon + Chennai bbox validation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c3aed;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="348" y="202" width="214" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ing-geo" value="to_geojson.py&#10;GeoJSON (WGS84 / EPSG:4326) + provenance" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c3aed;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="348" y="254" width="214" height="44" as="geometry" />
+        </mxCell>
+
+        <!-- ================= AWS Cloud ================= -->
+        <mxCell id="aws" value="AWS Cloud (us-east-1) — serverless" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff8ef;strokeColor=#ff9900;fontStyle=1;fontColor=#8a5a00;verticalAlign=top;spacingTop=8;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="640" y="90" width="560" height="430" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s3-raw" value="Amazon S3 — raw bucket&#10;(private · encrypted)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="665" y="140" width="220" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-proc" value="Amazon S3 — processed bucket&#10;processed/*.geojson (private · encrypted)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="665" y="212" width="220" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="lambda" value="AWS Lambda — datasets_api&#10;Python 3.12 · reads processed GeoJSON&#10;IAM least privilege: s3:GetObject only" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fde7e9;strokeColor=#d32f2f;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="665" y="300" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="apigw" value="Amazon API Gateway (HTTP API)&#10;GET /flood-hotspots /water-bodies&#10;/rainfall-sites /hazard-zones /datasets&#10;CORS locked to Amplify origin" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede7f6;strokeColor=#5e35b1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="930" y="212" width="245" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="amplify" value="AWS Amplify Hosting&#10;builds &amp; serves the React SPA&#10;(amplify.yml · SPA rewrites)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#ef6c00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="930" y="350" width="245" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="location" value="Amazon Location Service (optional)&#10;map basemap — off by default" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1f5fe;strokeColor=#0277bd;fontSize=11;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="930" y="140" width="245" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="cw" value="Amazon CloudWatch Logs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#757575;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="665" y="400" width="220" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ================= Frontend ================= -->
+        <mxCell id="fe-group" value="React Frontend (Vite · TypeScript · Tailwind)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0d1424;strokeColor=#22d3ee;fontStyle=1;fontColor=#e5edf5;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="640" y="560" width="560" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-provider" value="DataProvider abstraction&#10;AwsApiProvider  ·  LocalGeoJSONProvider" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#14233f;strokeColor=#22d3ee;fontColor=#e5edf5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="660" y="592" width="250" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-ui" value="Overview · Map · Insights · Proximity · Datasets&#10;MapLibre GL map · Recharts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#14233f;strokeColor=#22d3ee;fontColor=#e5edf5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="660" y="654" width="250" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-map" value="MapLibre GL JS&#10;flood · water · rainfall · hazard layers&#10;clustering · search · legend" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#14233f;strokeColor=#38bdf8;fontColor=#e5edf5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="930" y="592" width="245" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="user" value="Citizens · Researchers · Urban planners" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#22d3ee;strokeColor=#0e7490;fontColor=#06232b;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="930" y="678" width="245" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ================= Local / Demo path ================= -->
+        <mxCell id="local" value="Local / Demo mode (no AWS)&#10;web/public/data/*.geojson bundled with the SPA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ecfeff;strokeColor=#0891b2;fontSize=11;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="600" width="250" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ================= Edges ================= -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#3b82f6;endArrow=block;" edge="1" parent="1" source="src-group" target="ing-group"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#7c3aed;endArrow=block;" edge="1" parent="1" source="ing-geo" target="s3-proc"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2b" value="raw downloads" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#9aa7b8;endArrow=block;dashed=1;fontSize=10;" edge="1" parent="1" source="ing-ingest" target="s3-raw"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" value="GetObject" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#2e7d32;endArrow=block;fontSize=10;" edge="1" parent="1" source="s3-proc" target="lambda"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#5e35b1;endArrow=block;" edge="1" parent="1" source="lambda" target="apigw"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4b" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#757575;endArrow=block;dashed=1;" edge="1" parent="1" source="lambda" target="cw"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" value="REST (CORS)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#5e35b1;endArrow=block;fontSize=10;" edge="1" parent="1" source="apigw" target="fe-provider"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" value="serves SPA" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#ef6c00;endArrow=block;fontSize=10;" edge="1" parent="1" source="amplify" target="fe-group"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#22d3ee;endArrow=block;" edge="1" parent="1" source="fe-provider" target="fe-ui"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#38bdf8;endArrow=block;" edge="1" parent="1" source="fe-ui" target="fe-map"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" value="optional style" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#0277bd;endArrow=block;dashed=1;fontSize=10;" edge="1" parent="1" source="location" target="fe-map"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#0e7490;endArrow=block;" edge="1" parent="1" source="fe-map" target="user"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e11" value="demo path (fetch bundled GeoJSON)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#0891b2;endArrow=block;dashed=1;fontSize=10;" edge="1" parent="1" source="ing-geo" target="local"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#0891b2;endArrow=block;dashed=1;" edge="1" parent="1" source="local" target="fe-provider"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
