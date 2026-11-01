@@ -16,6 +16,9 @@ Chennai flooded catastrophically in 2015. Years later, the question residents st
 
 **FloodLens AI** puts Chennai's flood history and its water bodies on a single interactive map. You can toggle layers, cluster dense areas, click any feature for details, search a neighbourhood, see analytical charts, and run a proximity analysis between a flood hotspot and the nearest lakes and tanks — all in a clean, responsive dashboard that runs in the browser.
 
+![FloodLens AI — interactive Chennai map with the overview cards and all layers](screenshots/01-map-overview.png)
+*The FloodLens AI dashboard: live overview stats and the interactive Chennai map.*
+
 ## The dataset I started with
 
 The headline dataset is **real and verified**: **57 named Chennai water bodies** — lakes, reservoirs, ponds, and the city's many temple tanks (*kulam*) — pulled live from **OpenStreetMap via the Overpass API**, licensed under the **Open Database License (ODbL)**. Each record carries its real coordinates, OSM feature type, and OSM way ID (e.g. `way/23633592` for Porur Lake).
@@ -31,6 +34,9 @@ I was deliberately honest about data provenance — a point I think matters for 
 
 I evaluated the Jal Shakti Water Bodies Census, data.gov.in, and IMD rainfall feeds for the other layers. None were available as an openly-downloadable, machine-readable file (they sit behind portals or exist only as PDFs). Rather than fabricate "real" data, I shipped those layers as **clearly-labelled demonstration data** — badged `DEMO` in the UI and documented in a provenance page. **Every statistic on the dashboard is computed from the loaded data at runtime; nothing is hardcoded.** That honesty is part of the project, not a caveat hidden in a footnote.
 
+![Dataset Explorer page showing VERIFIED and DEMO provenance badges](screenshots/05-datasets.png)
+*The in-app Dataset Explorer: water bodies badged VERIFIED (OpenStreetMap/ODbL), the other layers clearly badged DEMO — full provenance for every layer.*
+
 ## How I put it on the map
 
 The app is a **React + TypeScript + Vite** single-page app styled with Tailwind, rendering an interactive **MapLibre GL JS** map of Chennai. On the map:
@@ -41,14 +47,23 @@ The app is a **React + TypeScript + Vite** single-page app styled with Tailwind,
 - **Search** by neighbourhood or location that flies the map to the result.
 - **A legend** and live layer counts.
 
+![Chennai map with layer toggles and hazard-zone polygons enabled](screenshots/02-map-layers.png)
+*Four independent layers with toggles, clustering, a legend, and hazard-zone polygon overlays.*
+
 Beyond the map, three analysis views turn the data into understanding:
 - **Insights** — Recharts views (hotspots by neighbourhood, events by year, a flood-depth histogram, water bodies by type), all driven by the loaded data with live neighbourhood/year filters.
 - **Proximity Analysis** — pick a flood hotspot and get the *k* nearest water bodies with real great-circle (Haversine) distances, drawn as lines on the map. With an explicit reminder that proximity is geographic, not causal.
 - **Dataset Explorer** — a full data-provenance page: source, license, record count, CRS, and processing status for every layer.
 
+![Historical Insights charts driven by the loaded data](screenshots/03-insights.png)
+*Historical Insights: four charts computed live from the data, with neighbourhood and year filters.*
+
 ## The AWS location & data services I used, and why
 
 The architecture is **serverless and cost-conscious**:
+
+![FloodLens AI AWS serverless architecture using official AWS icons](architecture_aws_icons.png)
+*Serverless architecture: S3 → Lambda → API Gateway → Amplify Hosting, with optional Amazon Location Service.*
 
 - **Amazon S3** — two buckets (raw and processed), keeping source downloads separate from the validated GeoJSON the app consumes. Private and encrypted.
 - **AWS Lambda** (`datasets_api`, Python 3.12) — reads the processed GeoJSON from S3 and serves it as JSON. IAM is **least privilege**: `s3:GetObject` on the processed prefix only.
@@ -64,9 +79,15 @@ A repeatable **Python ingestion pipeline** (`ingest.py` → `validators.py` → 
 
 Open it and a pattern jumps out: Chennai's worst-hit 2015 neighbourhoods — Velachery, Mudichur, Pallikaranai, Kotturpuram — sit right against the city's lakes, tanks, and the Pallikaranai marsh. Run the proximity tool on Velachery and the nearest water body is **742 m away**. The map doesn't *prove* causation — and the UI says so plainly — but it makes the geography of risk legible in a way a PDF never could, and it hands planners and residents a reusable pattern for any city with open water-body data.
 
+![Proximity analysis showing nearest water bodies with real distances drawn on the map](screenshots/04-proximity.png)
+*Proximity Analysis: the nearest water bodies to Velachery (742 m, 1.3 km, 1.8 km), drawn on the map — with the proximity-is-not-causation caveat shown in the panel.*
+
 ## Quality
 
 The project ships with **60 automated tests, all passing**: data-validation and geo-math unit tests, Lambda/API handler tests, frontend component tests, and **Playwright end-to-end tests covering all the major journeys on both desktop and mobile** — map render, layer toggles, feature clicks, search, filter-driven charts, proximity distances, and graceful handling of missing values. It runs locally with one command (`cd web && npm run dev`) and deploys to Amplify with a committed `amplify.yml`.
+
+![FloodLens AI responsive mobile layout](screenshots/06-mobile.png)
+*Responsive mobile layout — the full dashboard reflows cleanly to a phone viewport.*
 
 ## How others can reuse it
 
