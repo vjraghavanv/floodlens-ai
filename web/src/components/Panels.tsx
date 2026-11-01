@@ -236,7 +236,12 @@ export function Proximity({
               key={r.item.id}
               className="flex justify-between border-b border-navy-700/50 py-1.5 text-sm last:border-0"
             >
-              <span>{r.item.name ?? r.item.id}</span>
+              <span>
+                {r.item.name ?? r.item.id}
+                {r.item.waterbody_type ? (
+                  <span className="ml-1 text-xs text-slate-500">({r.item.waterbody_type})</span>
+                ) : null}
+              </span>
               <span className="text-cyan-300">{formatKm(r.distanceKm)}</span>
             </li>
           ))}
