@@ -36,3 +36,5 @@ infra/**/*.zip
 web/test-results/
 web/playwright-report/
 web/.playwright/
+web/*.tsbuildinfo
+web/.tsbuild-node/
