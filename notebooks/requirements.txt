@@ -1,0 +1,7 @@
+# FloodLens AI — notebook dependencies
+# Run:  pip install -r notebooks/requirements.txt
+#       jupyter lab   (or: jupyter notebook)
+requests>=2.31
+pandas>=2.0
+folium>=0.15
+jupyter>=1.0
